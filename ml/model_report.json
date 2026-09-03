@@ -1,0 +1,87 @@
+{
+  "dataset_rows": 250000,
+  "failure_rate": 0.049504,
+  "split": {
+    "training_rows": 200000,
+    "test_rows": 50000,
+    "random_state": 42
+  },
+  "selection_metric": "average_precision",
+  "validation_metrics": {
+    "logistic_regression": {
+      "roc_auc": 0.505737,
+      "average_precision": 0.04965,
+      "accuracy": 0.5229,
+      "precision": 0.050793,
+      "recall": 0.488384,
+      "f1": 0.092016,
+      "confusion_matrix": [
+        [
+          19949,
+          18071
+        ],
+        [
+          1013,
+          967
+        ]
+      ]
+    },
+    "random_forest": {
+      "roc_auc": 0.496557,
+      "average_precision": 0.049742,
+      "accuracy": 0.949075,
+      "precision": 0.061538,
+      "recall": 0.00202,
+      "f1": 0.003912,
+      "confusion_matrix": [
+        [
+          37959,
+          61
+        ],
+        [
+          1976,
+          4
+        ]
+      ]
+    },
+    "hist_gradient_boosting": {
+      "roc_auc": 0.501078,
+      "average_precision": 0.049816,
+      "accuracy": 0.63035,
+      "precision": 0.050351,
+      "recall": 0.362121,
+      "f1": 0.088409,
+      "confusion_matrix": [
+        [
+          24497,
+          13523
+        ],
+        [
+          1263,
+          717
+        ]
+      ]
+    }
+  },
+  "selected_model": "hist_gradient_boosting",
+  "classification_threshold": 0.43000000000000005,
+  "test_metrics": {
+    "roc_auc": 0.490147,
+    "average_precision": 0.048756,
+    "accuracy": 0.052,
+    "precision": 0.049534,
+    "recall": 0.99798,
+    "f1": 0.094383,
+    "confusion_matrix": [
+      [
+        130,
+        47395
+      ],
+      [
+        5,
+        2470
+      ]
+    ]
+  },
+  "artifact": "ml/failure_predictor.joblib"
+}

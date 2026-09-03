@@ -1,0 +1,28 @@
+{
+  "event": "payment.failed",
+  "event_id": "evt_timeout_123456789",
+  "payload": {
+    "payment": {
+      "entity": {
+        "id": "pay_timeout_123456789",
+        "order_id": "order_timeout_123456789",
+        "amount": 75000,
+        "currency": "INR",
+        "status": "failed",
+        "method": "netbanking",
+        "bank": "SBI",
+        "wallet": null,
+        "customer_id": "cust_timeout_123456789",
+        "email": "customer@example.com",
+        "contact": "+919876543210",
+        "error_code": "GATEWAY_ERROR",
+        "error_description": "Payment gateway timeout",
+        "error_source": "gateway",
+        "error_step": "authorization",
+        "error_reason": "Bank server not responding",
+        "created_at": 1704067200,
+        "expired_at": 1704068100
+      }
+    }
+  }
+}

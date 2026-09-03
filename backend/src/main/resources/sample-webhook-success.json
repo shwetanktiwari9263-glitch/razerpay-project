@@ -1,0 +1,31 @@
+{
+  "event": "payment.captured",
+  "event_id": "evt_123456789",
+  "payload": {
+    "payment": {
+      "entity": {
+        "id": "pay_123456789",
+        "order_id": "order_123456789",
+        "amount": 50000,
+        "currency": "INR",
+        "status": "captured",
+        "method": "card",
+        "bank": "HDFC",
+        "wallet": null,
+        "customer_id": "cust_123456789",
+        "email": "customer@example.com",
+        "contact": "+919876543210",
+        "error_code": null,
+        "error_description": null,
+        "error_source": null,
+        "error_step": null,
+        "error_reason": null,
+        "acquirer_data": {
+          "auth_code": "AUTH123"
+        },
+        "created_at": 1704067200,
+        "captured_at": 1704067260
+      }
+    }
+  }
+}

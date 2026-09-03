@@ -1,0 +1,44 @@
+# Java / Maven
+backend/target/
+*.class
+
+# Node / Vite
+frontend/node_modules/
+frontend/dist/
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# IDE files
+.idea/
+.vscode/
+*.iml
+
+# OS files
+.DS_Store
+Thumbs.db
+
+
+.env
+.env.*
+!.env.example
+
+# Python virtual environment
+.venv/
+venv/
+ml/.venv/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Node
+node_modules/
+
+# Build files
+target/
+dist/
+build/

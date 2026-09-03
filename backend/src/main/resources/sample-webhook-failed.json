@@ -1,0 +1,29 @@
+{
+  "event": "payment.failed",
+  "event_id": "evt_failed_123456789",
+  "payload": {
+    "payment": {
+      "entity": {
+        "id": "pay_failed_123456789",
+        "order_id": "order_failed_123456789",
+        "amount": 50000,
+        "currency": "INR",
+        "status": "failed",
+        "method": "card",
+        "bank": "ICICI",
+        "wallet": null,
+        "customer_id": "cust_failed_123456789",
+        "email": "customer@example.com",
+        "contact": "+919876543210",
+        "error_code": "BAD_REQUEST_ERROR",
+        "error_description": "Invalid Card",
+        "error_source": "customer",
+        "error_step": "authentication",
+        "error_reason": "Card has expired",
+        "vpa": null,
+        "created_at": 1704067200,
+        "expired_at": 1704067200
+      }
+    }
+  }
+}
