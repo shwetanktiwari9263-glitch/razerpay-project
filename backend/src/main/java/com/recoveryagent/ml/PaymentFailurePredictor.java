@@ -4,10 +4,12 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.client.JdkClientHttpRequestFactory;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestClient;
 
 import java.io.*;
+import java.net.http.HttpClient;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.*;
@@ -49,7 +51,15 @@ public class PaymentFailurePredictor {
      * Calls the Python service that loads the trained scikit-learn artifact.
      */
     private FailurePrediction predictWithModel(PaymentPredictionRequest request) {
-        FailurePrediction prediction = RestClient.create(mlServiceUrl).post()
+        // Uvicorn serves this local FastAPI endpoint over HTTP/1.1. Explicitly
+        // selecting HTTP/1.1 prevents the JDK client's h2c upgrade attempt,
+        // which Uvicorn rejects before it can validate the JSON request body.
+        RestClient mlClient = RestClient.builder()
+                .baseUrl(mlServiceUrl)
+                .requestFactory(new JdkClientHttpRequestFactory(
+                        HttpClient.newBuilder().version(HttpClient.Version.HTTP_1_1).build()))
+                .build();
+        FailurePrediction prediction = mlClient.post()
                 .uri("/predict")
                 .body(request)
                 .retrieve()
